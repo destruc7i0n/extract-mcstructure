@@ -8,7 +8,10 @@ Extract's mcstructures from the Bedrock leveldb (possibly saved from the `/struc
 
 `python3 run.py World house` - Extracts the structure named "house" from the world named "World"
 
-All extracted files will be outputted to the first behaviour pack found in the world (file will be output in the `structures` folder of the behaviour pack). 
+All extracted files will be outputted to a `structures` folder in the world folder. 
+
+Periods in the namespace will automatically create subdirectories in the `structures` folder. 
+Ex: `destruc7i0n.test:structure` will output to `<world>/structures/destruc7i0n/test/structure.mcstructure`
 
 ### Note
 `leveldb` lib is from `Amulet-Team/Amulet-Core`.
