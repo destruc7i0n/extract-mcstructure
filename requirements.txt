@@ -1,1 +1,1 @@
-amulet-nbt>=1.0.3.10
+amulet-nbt~=2.0

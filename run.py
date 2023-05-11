@@ -6,7 +6,7 @@ from pathlib import Path
 import amulet_nbt
 from leveldb import LevelDB
 
-StructureDict = typing.Dict[str, amulet_nbt.NBTFile]
+StructureDict = typing.Dict[str, amulet_nbt.NamedTag]
 
 parser = argparse.ArgumentParser(
   description='Extract .mcstructure files'
@@ -113,7 +113,7 @@ def main():
       if key_str.startswith('structuretemplate_'):
         str_id = key_str[len('structuretemplate_'):]
 
-        structure = amulet_nbt.load(buffer=data, little_endian=True)
+        structure = amulet_nbt.load(filepath_or_buffer=data, little_endian=True)
         structures[str_id] = structure
 
         if (str_id == structure_id or structure_id == 'all') and args.delete:
